@@ -1,85 +1,41 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="book">
+      <BookCover v-if="currentPage === -1" @open="goToFirstPage" />
+      <Page v-else-if="currentPage < pages.length" :content="pages[currentPage]" @flip="goToNextPage" />
+      <BookBack v-else></BookBack>
+  </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+
+import BookCover from './components/BookCover.vue'
+import Page from './components/Page.vue'   
+import BookBack from './components/BookBack.vue'   
+import IntroPage from './components/PageContent/IntroPage.vue'
+
+const currentPage = ref(-1)
+const pages = [IntroPage]
+
+const goToFirstPage = () => {
+  currentPage.value = 0
+}
+const goToNextPage = () => {
+  currentPage.value++
+}
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+back
+.book {
+width: 600px;
+height: 400px;
+margin: 50px auto;
+border: 2px solid #ccc;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+background: blue;
+position: relative;
+overflow: hidden;
 }
 </style>
