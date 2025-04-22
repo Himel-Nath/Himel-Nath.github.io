@@ -1,14 +1,17 @@
 <template>
-    <div class="page" @click="$emit('flip')">
-        <component :is="content" />
+    <div class="page">
+        <component :is="content"/>
+        <div class="navigation">
+            <FlipButton label="← Go back" @click="$emit('back')"/>
+            <FlipButton label="Flip →" @click="$emit('flip')"/>
+        </div>
     </div>
 </template>
 
 <script setup>
-defineProps({
-    content: {
-        type: Object,    }
-})
+import FlipButton from './FlipButton.vue';
+
+defineProps(['content'])
 </script>
 
 <style scoped>
@@ -21,5 +24,13 @@ defineProps({
   justify-content: center;
   cursor: pointer;
   transition: transform 0.5s ease;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
 }
 </style>

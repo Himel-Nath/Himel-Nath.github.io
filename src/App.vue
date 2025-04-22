@@ -1,8 +1,11 @@
 <template>
   <div class="book">
       <BookCover v-if="currentPage === -1" @open="goToFirstPage" />
-      <Page v-else-if="currentPage < pages.length" :content="pages[currentPage]" @flip="goToNextPage" />
-      <BookBack v-else></BookBack>
+      <Page v-else-if="currentPage < pages.length"
+      :content="pages[currentPage]" 
+      @flip="goToNextPage" 
+      @back="goToPreviousPage"/>
+      <BookBack v-else @back="goToPreviousPage"></BookBack>
   </div>
 </template>
 
@@ -13,21 +16,28 @@ import BookCover from './components/BookCover.vue'
 import Page from './components/Page.vue'   
 import BookBack from './components/BookBack.vue'   
 import IntroPage from './components/PageContent/IntroPage.vue'
+import SecondPage from './components/PageContent/SecondPage.vue'
 
 const currentPage = ref(-1)
-const pages = [IntroPage]
+const pages = [IntroPage, SecondPage]
 
 const goToFirstPage = () => {
   currentPage.value = 0
 }
 const goToNextPage = () => {
-  currentPage.value++
+  currentPage.value++  
 }
 
+const goToPreviousPage = () => {
+  if (currentPage.value > 0) {
+    currentPage.value--
+  } else {
+    currentPage.value = -1
+  }
+}
 </script>
 
 <style scoped>
-back
 .book {
 width: 600px;
 height: 400px;
