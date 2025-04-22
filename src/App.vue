@@ -39,12 +39,12 @@ const goToPreviousPage = () => {
 
 <style scoped>
 .book {
-width: 600px;
-height: 400px;
+width: 60vw;
+height: 80vh;
 margin: 50px auto;
 border: 2px solid #ccc;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
-background: blue;
+background: beige;
 position: relative;
 overflow: hidden;
 }
