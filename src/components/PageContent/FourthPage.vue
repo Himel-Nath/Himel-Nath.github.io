@@ -1,10 +1,10 @@
 <template>
   <div class="book-theme">
-    <h1>Second Page</h1>
-    <p>This is the second page of the book.</p>
+    <h1>Page 4</h1>
+    <p>This is the content of the fourth page.</p>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import '@/assets/book-theme.css'
 </script>

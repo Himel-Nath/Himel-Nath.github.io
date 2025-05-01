@@ -1,77 +1,67 @@
 <template>
   <div class="app">
-    <div class="book">
-        <BookCover v-if="currentSpread === -1" @open="goToFirstSpread" />
-        <div v-else-if="currentSpread < totalSpreads" class="book-spread">
-          <Page v-if="leftPage"
-            :content="leftPage" 
-            side="left"
-            @back="goToPreviousSpread"/>
-          <Page v-if="rightPage"
-            :content="rightPage"
-            side="right"
-            @flip="goToNextSpread"/>
-        </div>
-        <BookBack v-else @back="goToPreviousSpread"></BookBack>
-    </div>
+    <div ref="bookContainer" class="book"></div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { onMounted, createApp, nextTick, ref } from 'vue'
+import { PageFlip } from 'page-flip'
 
 import BookCover from './components/BookCover.vue'
-import Page from './components/Page.vue'   
-import BookBack from './components/BookBack.vue'   
+import BookBack from './components/BookBack.vue'
 import IntroPage from './components/PageContent/IntroPage.vue'
 import SecondPage from './components/PageContent/SecondPage.vue'
+import ThirdPage from './components/PageContent/ThirdPage.vue'
+import FourthPage from './components/PageContent/FourthPage.vue'
 
-const currentSpread = ref(-1)
-const pages = [IntroPage, SecondPage]
-const totalSpreads = Math.ceil(pages.length / 2)
+const bookContainer = ref(null)
+let pageFlip = null
+const pages = [
+  { component: BookCover },
+  { component: IntroPage },
+  { component: SecondPage },
+  { component: ThirdPage },
+  { component: FourthPage },
+  { component: BookBack },
+]
 
-const goToFirstSpread = () => {
-  currentSpread.value = 0
-}
-const goToNextSpread = () => {
-  currentSpread.value++  
-}
+onMounted(async () => {
+  await nextTick()
 
-const goToPreviousSpread = () => {
-  if (currentSpread.value > 0) {
-    currentSpread.value--
-  } else {
-    currentSpread.value = -1
+  for (const { component } of pages) {
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('page')
+    bookContainer.value.appendChild(wrapper)
+    const app = createApp(component)
+    app.mount(wrapper)
   }
-}
 
-const leftPage = computed(() => pages[currentSpread.value * 2] || null)
-const rightPage = computed(() => pages[currentSpread.value * 2 + 1] || null)
+  pageFlip = new PageFlip(bookContainer.value, {
+    width: 400,
+    height: 600,
+    size: 'fixed',
+    showCover: true,
+    maxShadowOpacity: 0.5,
+    useMouseEvents: true,
+    flippingTime: 800,
+  })
+
+  pageFlip.loadFromHTML(document.querySelectorAll('.page'))
+})
 </script>
 
-<style scoped>
+<style>
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(169, 219, 228);  
-  height: 100vh;  
-  width: 100vw;   
-}
-
-.book {
-  display: flex; 
-  width: 80vw;  
-  height: 80vh;  
   background: rgb(169, 219, 228);
-  position: relative;
-  overflow: hidden;
-  justify-content: center; 
+  height: 100vh;
+  width: 100vw;
 }
-
-.book-spread {
-  display: flex;
-  width: 100%;  
-  height: 100%;
+.book {
+  width: 800px;
+  height: 600px;
 }
 </style>
