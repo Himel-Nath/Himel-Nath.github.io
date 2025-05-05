@@ -27,3 +27,23 @@ p {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: #444;
 }
+
+@keyframes revealText {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+}
+
+.reveal-text {
+  opacity: 1;
+  animation: revealText 4s ease-in-out forwards;
+  white-space: pre-wrap;
+}

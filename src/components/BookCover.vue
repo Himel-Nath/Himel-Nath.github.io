@@ -4,6 +4,6 @@ import '@/assets/book-theme.css'
 
 <template>
   <div class="book-theme">
-    <h1 class="title">My Portfolio</h1>
+    <h1 class="title hidden">My Portfolio</h1>
   </div>
 </template>

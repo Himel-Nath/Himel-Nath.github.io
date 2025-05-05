@@ -38,8 +38,8 @@ onMounted(async () => {
   }
 
   pageFlip = new PageFlip(bookContainer.value, {
-    width: 400,
-    height: 600,
+    width: 500,
+    height: 700,
     size: 'fixed',
     showCover: true,
     maxShadowOpacity: 0.5,
@@ -48,7 +48,34 @@ onMounted(async () => {
   })
 
   pageFlip.loadFromHTML(document.querySelectorAll('.page'))
+
+  // initial reveal
+  setTimeout(() => {
+    revealText()
+  }, 100)
+
+  // reveal on each flip
+  pageFlip.on('flip', () => {
+    requestAnimationFrame(() => {
+      revealText()
+    })
+  })
 })
+
+function revealText() {
+  const pages = [...document.querySelectorAll('.page')].filter((el) => el.offsetParent !== null)
+
+  pages.forEach((currentPage) => {
+    const elements = currentPage.querySelectorAll('.hidden')
+
+    elements.forEach((element) => {
+      element.classList.remove('reveal-text')
+      void element.offsetWidth
+      element.classList.remove('hidden')
+      element.classList.add('reveal-text')
+    })
+  })
+}
 </script>
 
 <style>
