@@ -3,18 +3,26 @@
   margin: 0;
 }
 
+.parchment-wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url('/parchment.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .book-theme {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f4e1b2 0%, #d8b79f 100%);
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 20px;
+  background: none;
   text-align: center;
+  padding: 0;
 }
 
 .title {
@@ -46,4 +54,9 @@ p {
   opacity: 1;
   animation: revealText 4s ease-in-out forwards;
   white-space: pre-wrap;
+}
+
+.page {
+  width: 600px;
+  height: 750px;
 }

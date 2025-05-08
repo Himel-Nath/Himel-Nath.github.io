@@ -1,6 +1,8 @@
 <template>
-  <div class="app">
-    <div ref="bookContainer" class="book"></div>
+  <div>
+    <div class="app">
+      <div ref="bookContainer" class="book"></div>
+    </div>
   </div>
 </template>
 
@@ -38,11 +40,11 @@ onMounted(async () => {
   }
 
   pageFlip = new PageFlip(bookContainer.value, {
-    width: 500,
-    height: 700,
+    width: 550,
+    height: 750,
     size: 'fixed',
     showCover: true,
-    maxShadowOpacity: 0.5,
+    maxShadowOpacity: 0,
     useMouseEvents: true,
     flippingTime: 800,
   })
@@ -83,12 +85,12 @@ function revealText() {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(169, 219, 228);
+  background: transparent;
   height: 100vh;
   width: 100vw;
 }
 .book {
-  width: 800px;
-  height: 600px;
+  width: 1200px;
+  height: 750px;
 }
 </style>
