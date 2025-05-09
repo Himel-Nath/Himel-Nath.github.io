@@ -5,7 +5,7 @@ import '@/assets/book-theme.css'
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="title hidden">My Portfolio</h1>
+      <h1 class="title hidden-text">My Portfolio</h1>
     </div>
   </div>
 </template>

@@ -25,8 +25,9 @@
         <source src="/rain.mp4" type="video/mp4" />
       </video>
     </div>
+    <div class="overlay" @click="toggleVisibility"></div>
     <div class="app">
-      <div ref="bookContainer" class="book-container"></div>
+      <div ref="bookContainer" class="book-container" :class="{ hidden: !bookVisible }"></div>
       <button class="toggle-button" @click="toggleDisplay">
         {{ currentMode === 'lumos' ? '🌙' : '🔅' }}
       </button>
@@ -53,6 +54,7 @@ let pageFlip = null
 const currentMode = ref('lumos')
 const backgroundAudio = ref(null)
 const isMuted = ref(true)
+const bookVisible = ref(true)
 const pages = [
   { component: BookCover },
   { component: IntroPage },
@@ -77,6 +79,10 @@ function toggleMute() {
       })
     }
   }
+}
+
+function toggleVisibility() {
+  bookVisible.value = !bookVisible.value
 }
 
 onMounted(async () => {
@@ -119,12 +125,12 @@ function revealText() {
   const pages = [...document.querySelectorAll('.page')].filter((el) => el.offsetParent !== null)
 
   pages.forEach((currentPage) => {
-    const elements = currentPage.querySelectorAll('.hidden')
+    const elements = currentPage.querySelectorAll('.hidden-text')
 
     elements.forEach((element) => {
       element.classList.remove('reveal-text')
       void element.offsetWidth
-      element.classList.remove('hidden')
+      element.classList.remove('hidden-text')
       element.classList.add('reveal-text')
     })
   })
@@ -140,9 +146,30 @@ function revealText() {
   height: 100vh;
   width: 100vw;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: transparent;
+}
 .book-container {
   width: 1200px;
   height: 750px;
+  transition:
+    transform 1s ease-in-out,
+    opacity 1s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.book-container.hidden {
+  transform: translateY(700px);
+  opacity: 1;
+  pointer-events: none;
 }
 .toggle-button {
   position: fixed;

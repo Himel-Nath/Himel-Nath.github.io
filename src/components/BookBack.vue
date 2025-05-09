@@ -5,8 +5,8 @@ import '@/assets/book-theme.css'
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="title hidden">The End</h1>
-      <p class="subtitle hidden">Thank you for reading!</p>
+      <h1 class="title hidden-text">The End</h1>
+      <p class="subtitle hidden-text">Thank you for reading!</p>
     </div>
   </div>
 </template>
