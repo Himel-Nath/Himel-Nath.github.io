@@ -1,7 +1,38 @@
 <template>
   <div>
+    <audio ref="backgroundAudio" src="/audio.mp3" loop></audio>
+    <div>
+      <video
+        ref="lightMode"
+        autoplay
+        loop
+        muted
+        playsinline="true"
+        class="background"
+        :class="{ visible: currentMode === 'lumos' }"
+      >
+        <source src="/fireplace.mp4" type="video/mp4" />
+      </video>
+      <video
+        ref="darkMode"
+        autoplay
+        loop
+        muted
+        playsinline="true"
+        class="background"
+        :class="{ visible: currentMode === 'nox' }"
+      >
+        <source src="/rain.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="app">
-      <div ref="bookContainer" class="book"></div>
+      <div ref="bookContainer" class="book-container"></div>
+      <button class="toggle-button" @click="toggleDisplay">
+        {{ currentMode === 'lumos' ? '🌙' : '🔅' }}
+      </button>
+      <button class="toggle-button mute" @click="toggleMute">
+        {{ isMuted ? '🔊' : '🔇' }}
+      </button>
     </div>
   </div>
 </template>
@@ -19,6 +50,9 @@ import FourthPage from './components/PageContent/FourthPage.vue'
 
 const bookContainer = ref(null)
 let pageFlip = null
+const currentMode = ref('lumos')
+const backgroundAudio = ref(null)
+const isMuted = ref(true)
 const pages = [
   { component: BookCover },
   { component: IntroPage },
@@ -27,6 +61,23 @@ const pages = [
   { component: FourthPage },
   { component: BookBack },
 ]
+
+function toggleDisplay() {
+  currentMode.value = currentMode.value === 'lumos' ? 'nox' : 'lumos'
+}
+
+function toggleMute() {
+  isMuted.value = !isMuted.value
+  const audio = backgroundAudio.value
+  if (audio) {
+    audio.muted = isMuted.value
+    if (!isMuted.value) {
+      audio.play().catch((error) => {
+        console.error('Error playing audio:', error)
+      })
+    }
+  }
+}
 
 onMounted(async () => {
   await nextTick()
@@ -89,8 +140,28 @@ function revealText() {
   height: 100vh;
   width: 100vw;
 }
-.book {
+.book-container {
   width: 1200px;
   height: 750px;
+}
+.toggle-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.toggle-button.mute {
+  bottom: 4rem;
 }
 </style>

@@ -33,3 +33,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Sources
+
+- fireplace https://pixabay.com/videos/live-wallpaper-cozy-cabin-rainy-day-270983/
+- rain https://www.behance.net/gallery/36569841/Coffee-in-rain-gif-animation
+- audio https://www.youtube.com/watch?v=Uq7kyf1T_lk
