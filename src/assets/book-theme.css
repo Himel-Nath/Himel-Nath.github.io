@@ -1,11 +1,25 @@
 * {
   font-family: 'IM Fell English SC', serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.book-theme,
 .parchment-wrapper {
   width: 100%;
   height: 100%;
+  padding: 0;
+}
+
+.parchment-wrapper {
   background-image: url('/parchment.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -13,23 +27,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .book-theme {
-  width: 100%;
-  height: 100%;
   background: none;
   text-align: center;
-  padding: 0;
 }
 
 .title {
   font-size: clamp(1.5rem, 4vw, 3rem);
   color: #444;
 }
-
 .subtitle,
 p {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
@@ -49,7 +57,6 @@ p {
   opacity: 0;
   clip-path: inset(0 100% 0 0);
 }
-
 .reveal-text {
   opacity: 1;
   animation: revealText 4s ease-in-out forwards;
@@ -62,17 +69,16 @@ p {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-
 .background.visible {
   opacity: 1;
 }
