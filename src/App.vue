@@ -1,6 +1,7 @@
 <template>
   <div>
     <audio ref="backgroundAudio" src="/audio.mp3" loop></audio>
+    <audio ref="flipAudio" src="/flip.mp3" preload="auto" playsinline="true"></audio>
     <div>
       <video
         ref="lightMode"
@@ -55,6 +56,7 @@ const currentMode = ref('lumos')
 const backgroundAudio = ref(null)
 const isMuted = ref(true)
 const bookVisible = ref(true)
+const flipAudio = ref(null)
 const pages = [
   { component: BookCover },
   { component: IntroPage },
@@ -112,6 +114,19 @@ onMounted(async () => {
   setTimeout(() => {
     revealText()
   }, 100)
+
+  pageFlip.on('changeState', (e) => {
+    if (e.data === 'user_fold' || e.data === 'flipping') {
+      const sound = flipAudio.value
+      if (sound) {
+        sound.volume = 0.5
+        sound.currentTime = 0
+        sound.play().catch((error) => {
+          console.error('Error playing flip sound:', error)
+        })
+      }
+    }
+  })
 
   // reveal on each flip
   pageFlip.on('flip', () => {
