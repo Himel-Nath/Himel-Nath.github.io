@@ -1,7 +1,7 @@
 <template>
   <div>
     <audio ref="backgroundAudio" src="/audio.mp3" loop></audio>
-    <audio ref="flipAudio" src="/flip.mp3" preload="auto" playsinline="true"></audio>
+    <audio ref="flipAudio" src="/flip.mp3" preload="auto"></audio>
     <div>
       <video
         ref="lightMode"
@@ -68,6 +68,7 @@ const pages = [
 
 function toggleDisplay() {
   currentMode.value = currentMode.value === 'lumos' ? 'nox' : 'lumos'
+  showSpell(currentMode.value)
 }
 
 function toggleMute() {
@@ -81,10 +82,14 @@ function toggleMute() {
       })
     }
   }
+  const spell = isMuted.value ? 'muffliato' : 'sonorus'
+  showSpell(spell)
 }
 
 function toggleVisibility() {
   bookVisible.value = !bookVisible.value
+  const spell = bookVisible.value ? 'revelio' : 'evanesco'
+  showSpell(spell)
 }
 
 onMounted(async () => {
@@ -155,6 +160,10 @@ onMounted(async () => {
       ? 'block'
       : 'none'
   })
+
+  const spellText = document.createElement('div')
+  spellText.className = 'spell-text'
+  wandCursor.appendChild(spellText)
 })
 
 function revealText() {
@@ -170,6 +179,37 @@ function revealText() {
       element.classList.add('reveal-text')
     })
   })
+}
+
+function showSpell(word) {
+  const text = document.querySelector('.spell-text')
+  text.innerHTML = ''
+
+  const letters = word.split('')
+  letters.forEach((char, index) => {
+    const span = document.createElement('span')
+    span.className = 'spell-char'
+    span.textContent = char
+    span.style.setProperty('--wobble-amount', `${Math.random() * 6 - 2}px`)
+    text.appendChild(span)
+
+    setTimeout(() => {
+      span.style.opacity = '1'
+    }, index * 200)
+  })
+
+  setTimeout(
+    () => {
+      letters.forEach((_, index) => {
+        setTimeout(() => {
+          if (text.children[index]) {
+            text.children[index].style.opacity = '0'
+          }
+        }, index * 200)
+      })
+    },
+    letters.length * 150 + 1000,
+  )
 }
 </script>
 
@@ -226,5 +266,34 @@ function revealText() {
 
 .toggle-button.mute {
   bottom: 4rem;
+}
+
+.spell-text {
+  position: absolute;
+  top: -1.5rem;
+  left: 25%;
+  transform: translateX(-50%);
+  font-family: 'IM Fell English SC', serif;
+  color: gold;
+  font-size: 1.5rem;
+  pointer-events: none;
+  display: flex;
+  gap: 0.1rem;
+  white-space: nowrap;
+}
+.spell-char {
+  opacity: 0;
+  animation: wobble 1s infinite ease-in-out;
+  transform: translateY(0);
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--wobble-amount, 2px));
+  }
 }
 </style>
