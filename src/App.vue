@@ -164,6 +164,8 @@ onMounted(async () => {
   const spellText = document.createElement('div')
   spellText.className = 'spell-text'
   wandCursor.appendChild(spellText)
+
+  document.addEventListener('keydown', handleKeydown)
 })
 
 function revealText() {
@@ -210,6 +212,39 @@ function showSpell(word) {
     },
     letters.length * 150 + 1000,
   )
+}
+
+function handleKeydown(e) {
+  if (!pageFlip) {
+    return
+  }
+
+  switch (e.key) {
+    case 'ArrowLeft':
+      pageFlip.flipPrev()
+      break
+    case 'ArrowRight':
+      pageFlip.flipNext()
+      break
+    case 'ArrowUp':
+      if (!bookVisible.value) {
+        toggleVisibility()
+      }
+      break
+    case 'ArrowDown':
+      if (bookVisible.value) {
+        toggleVisibility()
+      }
+      break
+    case 'l':
+    case 'L':
+      toggleDisplay()
+      break
+    case 'm':
+    case 'M':
+      toggleMute()
+      break
+  }
 }
 </script>
 
