@@ -82,3 +82,52 @@ p {
 .background.visible {
   opacity: 1;
 }
+
+/* replace cursor */
+body,
+button,
+a,
+[role='button'],
+.clickable {
+  cursor: none !important;
+}
+
+.wand-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  z-index: 9999;
+}
+.wand-cursor img {
+  height: 100%;
+  width: 100%;
+}
+
+.wand-cursor .glow {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 15px 6px rgba(255, 215, 0, 0.8);
+  pointer-events: none;
+  filter: blur(3px);
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+  z-index: 10000;
+}
+
+@keyframes pulseGlow {
+  from {
+    opacity: 0.7;
+    box-shadow: 0 0 10px 3px rgba(255, 215, 0, 0.6);
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.9);
+  }
+}

@@ -134,6 +134,27 @@ onMounted(async () => {
       revealText()
     })
   })
+
+  const wandCursor = document.createElement('div')
+  wandCursor.className = 'wand-cursor'
+  wandCursor.innerHTML = `
+    <img src='/wand.png'>
+    <div class='glow'></div>
+  `
+  document.body.appendChild(wandCursor)
+
+  const glow = wandCursor.querySelector('.glow')
+  glow.style.display = 'none'
+
+  document.addEventListener('mousemove', (e) => {
+    wandCursor.style.top = `${e.clientY}px`
+    wandCursor.style.left = `${e.clientX}px`
+  })
+  document.addEventListener('mouseover', (e) => {
+    glow.style.display = e.target.closest('button, a, [role="button"], .clickable')
+      ? 'block'
+      : 'none'
+  })
 })
 
 function revealText() {
@@ -189,7 +210,7 @@ function revealText() {
 .toggle-button {
   position: fixed;
   bottom: 1rem;
-  right: 1rem;
+  left: 1rem;
   z-index: 10;
   background: rgba(255, 255, 255, 0.6);
   border: none;

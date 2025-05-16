@@ -39,3 +39,5 @@ npm run lint
 - fireplace https://pixabay.com/videos/live-wallpaper-cozy-cabin-rainy-day-270983/
 - rain https://www.behance.net/gallery/36569841/Coffee-in-rain-gif-animation
 - audio https://www.youtube.com/watch?v=Uq7kyf1T_lk
+- flip https://pixabay.com/sound-effects/rustling-a-newspaper-66647/
+- page flip library https://nodlik.github.io/StPageFlip/
