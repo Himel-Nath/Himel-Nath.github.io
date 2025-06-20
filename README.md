@@ -41,3 +41,5 @@ npm run lint
 - audio https://www.youtube.com/watch?v=Uq7kyf1T_lk
 - flip https://pixabay.com/sound-effects/rustling-a-newspaper-66647/
 - page flip library https://nodlik.github.io/StPageFlip/
+- world map https://pixabay.com/vectors/world-map-earth-global-continents-146505/
+- foot print https://pixabay.com/vectors/footprint-track-shoe-sole-foot-311640/

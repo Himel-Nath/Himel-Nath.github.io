@@ -131,3 +131,16 @@ a,
     box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.9);
   }
 }
+
+.title {
+  margin: 5px;
+  font-size: 3em;
+}
+
+.page-text {
+  font-size: 1.4em;
+  padding: 0 10px 0 10px;
+  line-height: 1;
+  text-align: left;
+  opacity: 0.8;
+}

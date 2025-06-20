@@ -1,9 +1,21 @@
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="hidden-text">Intro Page</h1>
-      <p class="hidden-text">This is the first page of the book.</p>
-      <p class="hidden-text">It serves as an introduction to the content that follows.</p>
+      <h1 class="hidden-text title">What we know</h1>
+      <p class="hidden-text page-text intro-text">
+        His name is Himel Dev Nath. Born in Bangladesh, his last confirmed sighting places him at
+        age 24 in Halifax, Nova Scotia, Canada. While the details remain sparse, being informed
+        about his background may help infer his future whereabouts. According to his family, his
+        relocation to Canada was driven by ambition, a desire to pursue higher education and get
+        closer to his larger goal. His Professors confirm that he not only adapted, but excelled,
+        using his growing knowledge to devise projects with unclear purposes (more on his projects
+        in page 4). What complicates his profile is his unpredictability. Those closest to him cite
+        strong interests in fine arts, literature and video games. While seemingly unrelated, these
+        hobbies hint at a mind that refuses to sit still, creatively and geographically. His
+        movements span the Middle East, Asia, Europe, and North America. It's anyone's guess where
+        he's headed next.
+      </p>
+      <img src="/world-map.gif" alt="world map" class="map" />
     </div>
   </div>
 </template>
@@ -11,3 +23,16 @@
 <script setup lang="ts">
 import '@/assets/book-theme.css'
 </script>
+
+<style lang="css">
+.map {
+  width: 500px;
+  height: 225px;
+  filter: sepia(100%);
+}
+
+.intro-text {
+  column-count: 2;
+  column-gap: 0.5em;
+}
+</style>
