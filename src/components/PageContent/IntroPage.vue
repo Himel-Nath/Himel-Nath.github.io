@@ -17,6 +17,7 @@
       </p>
       <img src="/world-map.gif" alt="world map" class="map" />
     </div>
+    <span class="page-number">2</span>
   </div>
 </template>
 
@@ -28,7 +29,7 @@ import '@/assets/book-theme.css'
 .map {
   width: 500px;
   height: 225px;
-  filter: sepia(100%);
+  filter: sepia(100%) brightness(80%);
 }
 
 .intro-text {
