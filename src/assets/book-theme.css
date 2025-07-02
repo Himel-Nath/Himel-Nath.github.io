@@ -35,10 +35,11 @@ body {
 }
 
 .title {
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: 2.5em;
   color: #444;
+  margin: 5px;
 }
-.subtitle,
+
 p {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: #444;
@@ -108,8 +109,8 @@ a,
 
 .wand-cursor .glow {
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: -6px;
+  left: -6px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -132,15 +133,28 @@ a,
   }
 }
 
-.title {
-  margin: 5px;
-  font-size: 3em;
-}
-
 .page-text {
   font-size: 1.4em;
   padding: 0 10px 0 10px;
   line-height: 1;
   text-align: left;
   opacity: 0.8;
+}
+
+/* Heavy weight on first letter */
+p::first-letter {
+  font-size: 200%;
+  font-weight: bold;
+  float: left;
+  margin-right: 6px;
+  line-height: 1;
+}
+
+.page-number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
 }
