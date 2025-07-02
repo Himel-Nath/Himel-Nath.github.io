@@ -5,7 +5,18 @@ import '@/assets/book-theme.css'
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="title hidden-text">Have you seen this person?</h1>
+      <div class="masthead">
+        <span class="publication-name">The Shadow Report</span>
+        <div class="divider"></div>
+        <div class="masthead-sub">
+          <span class="date">Wednesday, June 18, 2025</span>
+          <span class="volume">Vol. XIII Issue 6</span>
+        </div>
+        <div class="divider"></div>
+      </div>
+
+      <h1 class="title hidden-text">Have you seen this Person?</h1>
+      <span class="author">By Unknown Author</span>
 
       <figure class="image-container">
         <img src="/cover.gif" alt="cover photo" class="cover-photo" />
@@ -43,11 +54,38 @@ import '@/assets/book-theme.css'
   margin-top: 0.3em;
 }
 
-p::first-letter {
-  font-size: 200%;
+.masthead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.publication-name {
+  font-size: 3.4rem;
   font-weight: bold;
-  float: left;
-  margin-right: 6px;
-  line-height: 1;
+}
+
+.masthead-sub {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #333;
+  font-style: italic;
+}
+
+.divider {
+  width: 95%;
+  border-top: 1.5px solid black;
+  margin: 3px 0 3px 0;
+}
+
+.author {
+  display: block;
+  text-align: left;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #444;
+  padding-left: 10px;
 }
 </style>
