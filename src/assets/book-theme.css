@@ -158,3 +158,15 @@ p::first-letter {
   color: #444;
   font-style: italic;
 }
+
+figcaption {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #444;
+}
+
+.sub-title {
+  color: #444;
+  text-align: left;
+  margin-left: 1rem;
+}

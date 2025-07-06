@@ -44,14 +44,8 @@ import '@/assets/book-theme.css'
 .cover-photo {
   height: 450px;
   filter: grayscale(1) contrast(1.2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-}
-
-.caption {
-  font-size: 0.75rem;
-  font-style: italic;
-  color: #444;
-  margin-top: 0.3em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border: 2px solid #222;
 }
 
 .masthead {

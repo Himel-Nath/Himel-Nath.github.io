@@ -2,7 +2,12 @@
   <div class="parchment-wrapper">
     <div class="book-theme">
       <h1 class="hidden-text title">Where it began - Cont.</h1>
-      <img src="/award.jpg" alt="award" class="award" />
+      <figure>
+        <img src="/award.jpg" alt="award" class="award" />
+        <figcaption class="caption">
+          Bruce and Dorothy Rossetti Scholarship - Gold Award, 2022.
+        </figcaption>
+      </figure>
       <p class="hidden-text page-text third-text">
         His Professors and Dean took notice of his performance, awarding him the Sexton Scholar
         designation multiple times for maintaining a GPA above 3.85. Shown here is a certificate
@@ -28,6 +33,8 @@ import '@/assets/book-theme.css'
 .award {
   height: 220px;
   width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  border: 2px solid #222;
 }
 
 .third-text {
