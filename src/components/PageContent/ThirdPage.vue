@@ -34,7 +34,7 @@ import '@/assets/book-theme.css'
   height: 220px;
   width: 400px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  border: 2px solid #222;
+  border: 1px solid #222;
 }
 
 .third-text {

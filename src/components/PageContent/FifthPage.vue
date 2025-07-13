@@ -39,7 +39,7 @@ import '@/assets/book-theme.css'
   height: 225px;
   filter: grayscale(75%);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  border: 2px solid #222;
+  border: 1px solid #222;
   margin-right: 1rem;
 }
 

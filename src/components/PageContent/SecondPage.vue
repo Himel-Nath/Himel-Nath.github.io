@@ -36,24 +36,6 @@ import '@/assets/book-theme.css'
   column-gap: 1em;
 }
 
-.quote {
-  font-style: italic;
-  font-size: 1rem;
-  margin: 1rem 0;
-  padding-left: 1.5rem;
-  border-left: 3px solid #555;
-  color: #333;
-
-  footer {
-    font-size: 0.9rem;
-    font-style: normal;
-    margin-top: 0.5rem;
-    display: block;
-    color: #444;
-    text-align: right;
-  }
-}
-
 .canva-ad {
   float: right;
   height: 350px;

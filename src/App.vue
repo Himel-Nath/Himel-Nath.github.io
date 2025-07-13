@@ -51,6 +51,8 @@ import ThirdPage from './components/PageContent/ThirdPage.vue'
 import FourthPage from './components/PageContent/FourthPage.vue'
 import FifthPage from './components/PageContent/FifthPage.vue'
 import SixthPage from './components/PageContent/SixthPage.vue'
+import SeventhPage from './components/PageContent/SeventhPage.vue'
+import EightPage from './components/PageContent/EightPage.vue'
 
 const bookContainer = ref(null)
 let pageFlip = null
@@ -67,6 +69,8 @@ const pages = [
   { component: FourthPage },
   { component: FifthPage },
   { component: SixthPage },
+  { component: SeventhPage },
+  { component: EightPage },
   { component: BookBack },
 ]
 
@@ -108,7 +112,7 @@ onMounted(async () => {
   }
 
   pageFlip = new PageFlip(bookContainer.value, {
-    width: 550,
+    width: 575,
     height: 775,
     size: 'fixed',
     showCover: true,
