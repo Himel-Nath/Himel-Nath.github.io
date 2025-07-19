@@ -1,7 +1,7 @@
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="hidden-text title">Where he's worked</h1>
+      <h1 class="hidden-text title">Early Footprints</h1>
       <span class="page-number">7</span>
       <p class="hidden-text page-text">
         His first and current full time position is covered in page 9, while we explore the roles in

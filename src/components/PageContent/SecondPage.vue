@@ -18,8 +18,15 @@
         environment, and surviving through the pandemic. As time progressed, he was exposed to
         complex topics like data structures and algorithms, operating systems, and even machine
         learning.
-
-        <img src="/canva-ad.gif" alt="advertisement" class="canva-ad" />
+        <video
+          src="/canva-ad.mp4"
+          alt="canva"
+          class="canva-ad"
+          muted
+          playsinline
+          autoplay
+          loop
+        ></video>
       </p>
     </div>
     <span class="page-number">3</span>
@@ -39,6 +46,6 @@ import '@/assets/book-theme.css'
 .canva-ad {
   float: right;
   height: 350px;
-  margin-right: 20px;
+  margin: 0.5rem;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="parchment-wrapper">
     <div class="book-theme">
-      <h1 class="hidden-text title">Footprints through industry</h1>
+      <h1 class="hidden-text title">Early Footprints - Cont.</h1>
       <span class="page-number">8</span>
       <h3 class="hidden-text sub-title">E-Joy Grocery Store (Dated April 2023 - July 2023)</h3>
       <p class="hidden-text page-text">

@@ -53,6 +53,8 @@ import FifthPage from './components/PageContent/FifthPage.vue'
 import SixthPage from './components/PageContent/SixthPage.vue'
 import SeventhPage from './components/PageContent/SeventhPage.vue'
 import EightPage from './components/PageContent/EightPage.vue'
+import FullTime from './components/PageContent/FullTime.vue'
+import Hobbies from './components/PageContent/Hobbies.vue'
 
 const bookContainer = ref(null)
 let pageFlip = null
@@ -71,6 +73,8 @@ const pages = [
   { component: SixthPage },
   { component: SeventhPage },
   { component: EightPage },
+  { component: FullTime },
+  { component: Hobbies },
   { component: BookBack },
 ]
 
