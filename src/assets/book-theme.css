@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 html,
@@ -82,15 +83,6 @@ p {
 }
 .background.visible {
   opacity: 1;
-}
-
-/* replace cursor */
-body,
-button,
-a,
-[role='button'],
-.clickable {
-  cursor: none !important;
 }
 
 .wand-cursor {
