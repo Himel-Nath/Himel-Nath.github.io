@@ -18,11 +18,11 @@
       <br />
       <h3 class="hidden-text sub-title">Spotify Automation (Dated - Unknown)</h3>
       <p class="hidden-text page-text">
-        Not every build was large. Some were built with purpose. This one began as a personal tool,
-        a Python script designed to generate Spotify playlists from a single text file. Without any
-        UI or setup, it eliminated the need for manual playlist creation and streamlined a
-        repetitive task into a single step. It let users spend less time managing music, and more
-        time actually listening to it.
+        Not every build was large. Some were built with purpose. This began as a personal tool, a
+        Python script designed to generate Spotify playlists from a single text file. Without any UI
+        or setup, it eliminated the need for manual playlist creation and streamlined a repetitive
+        task into a single step. It let users spend less time managing music, and more time
+        listening to it.
       </p>
     </div>
     <span class="page-number">5</span>
