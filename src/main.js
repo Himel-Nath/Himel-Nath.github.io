@@ -1,5 +1,3 @@
-import '@fontsource/im-fell-english-sc'; 
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
