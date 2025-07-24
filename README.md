@@ -43,3 +43,4 @@ npm run lint
 - page flip library https://nodlik.github.io/StPageFlip/
 - world map https://pixabay.com/vectors/world-map-earth-global-continents-146505/
 - foot print https://pixabay.com/vectors/footprint-track-shoe-sole-foot-311640/
+- Ads, backgrounds, and images https://www.canva.com/
