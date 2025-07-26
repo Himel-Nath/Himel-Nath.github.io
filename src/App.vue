@@ -230,6 +230,7 @@ function showSpell(word) {
   )
 }
 
+// keyboard navigation
 function handleKeydown(e) {
   if (!pageFlip) {
     return
