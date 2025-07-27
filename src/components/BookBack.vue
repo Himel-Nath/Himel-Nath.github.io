@@ -2,7 +2,7 @@
   <div>
     <div class="book-theme">
       <div class="wanted-poster">
-        <img src="/wanted.png" alt="mugshot" class="wanted-picture" />
+        <img src="/wanted.png" alt="mugshot" class="wanted-picture" loading="lazy" />
         <div class="resources link-overlay">
           <ul>
             <li><a href="https://github.com/Himel-Nath" target="_blank">Github</a></li>
@@ -42,6 +42,10 @@
 
   ul {
     list-style: none;
+
+    li {
+      font-size: 1.2rem;
+    }
   }
 }
 

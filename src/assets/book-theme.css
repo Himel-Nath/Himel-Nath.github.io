@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
 
 * {
-  font-family: 'IM Fell English SC', serif;
+  font-family: 'IM Fell English', serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,6 +13,7 @@ body {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  cursor: none !important;
 }
 
 .book-theme,
@@ -133,6 +134,7 @@ p {
   line-height: 1;
   text-align: left;
   opacity: 0.8;
+  letter-spacing: 0.5px;
 }
 
 /* Heavy weight on first letter */
@@ -157,6 +159,7 @@ figcaption {
   font-size: 0.75rem;
   font-style: italic;
   color: #444;
+  margin-bottom: 0.5rem;
 }
 
 .sub-title {
@@ -180,5 +183,17 @@ figcaption {
     display: block;
     color: #444;
     text-align: right;
+  }
+}
+
+strong,
+.page-number {
+  color: black;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .page {
+    transform: scale(0.7);
   }
 }

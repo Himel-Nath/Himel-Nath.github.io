@@ -15,7 +15,15 @@
         a full-time position.
       </p>
       <figure>
-        <video class="doodles" muted playsinline autoplay loop src="/doodles.mp4"></video>
+        <video
+          class="doodles"
+          muted
+          playsinline
+          autoplay
+          loop
+          src="/doodles.mp4"
+          preload="none"
+        ></video>
         <figcaption class="caption">Recovered evidence stuffed inside the till drawer.</figcaption>
       </figure>
     </div>

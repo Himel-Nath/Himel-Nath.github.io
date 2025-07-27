@@ -15,7 +15,7 @@
         control. But he found beauty in the chaos. We've recovered some of his pieces, artifacts
         that might offer a glimpse into a crowded mind.
       </p>
-      <img src="/dancing.png" alt="dancing image" class="dancing-art" />
+      <img src="/dancing.png" alt="dancing image" class="dancing-art" loading="lazy" />
     </div>
   </div>
 </template>

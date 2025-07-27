@@ -19,7 +19,16 @@ import '@/assets/book-theme.css'
       <span class="author">By Unknown Author</span>
 
       <figure class="image-container">
-        <img src="/cover.gif" alt="cover photo" class="cover-photo" />
+        <video
+          src="/cover.mp4"
+          alt="cover photo"
+          class="cover-photo"
+          muted
+          playsinline
+          autoplay
+          loop
+          preload="none"
+        ></video>
         <figcaption class="caption">Captured somewhere in Europe, 2024.</figcaption>
       </figure>
 

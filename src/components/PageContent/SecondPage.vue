@@ -9,15 +9,21 @@
       </blockquote>
       <p class="hidden-text page-text second-text">
         Some might say he was gifted, but that couldn't be further from the truth. In high school,
-        he gravitated towards theory heavy subjects like Mathematics and the Sciences. If something
-        interested him, he'd keep chasing it. His final grades, certificate, and offers from top
-        universities across UK and Canada were sufficient evidence for that. And yet, he chose
-        Computer Science, something he'd never studied, at Dalhousie University. To him, it wasn't
-        the end goal. It was the tool. His main challenge in first year wasn't the learning curve.
-        It was everything else; living alone, making valuable connections, navigating a new
-        environment, and surviving through the pandemic. As time progressed, he was exposed to
-        complex topics like data structures and algorithms, operating systems, and even machine
-        learning.
+        he gravitated towards theory heavy subjects like
+        <strong>Mathematics and the Sciences</strong>. If something interested him, he'd keep
+        chasing it. His final grades, certificate, and offers from top universities across UK and
+        Canada were sufficient evidence for that.
+        <strong
+          >And yet, he chose Computer Science, something he'd never studied, at Dalhousie
+          University.</strong
+        >
+        To him, it wasn't the end goal. It was the tool. His main challenge in first year wasn't the
+        learning curve. It was everything else; living alone, making valuable connections,
+        navigating a new environment, and surviving through the pandemic. As time progressed, he was
+        exposed to complex topics like
+        <strong
+          >data structures and algorithms, operating systems, and even machine learning.</strong
+        >
         <video
           src="/canva-ad.mp4"
           alt="canva"
@@ -26,6 +32,7 @@
           playsinline
           autoplay
           loop
+          preload="none"
         ></video>
       </p>
     </div>

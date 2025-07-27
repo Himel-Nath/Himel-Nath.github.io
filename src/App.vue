@@ -1,6 +1,6 @@
 <template>
   <div>
-    <audio ref="backgroundAudio" src="/audio.mp3" loop></audio>
+    <audio ref="backgroundAudio" src="/audio.mp3" loop preload="none"></audio>
     <audio ref="flipAudio" src="/flip.mp3" preload="auto"></audio>
     <div>
       <video
@@ -11,6 +11,7 @@
         playsinline="true"
         class="background"
         :class="{ visible: currentMode === 'lumos' }"
+        preload="none"
       >
         <source src="/fireplace.mp4" type="video/mp4" />
       </video>
@@ -22,6 +23,7 @@
         playsinline="true"
         class="background"
         :class="{ visible: currentMode === 'nox' }"
+        preload="none"
       >
         <source src="/rain.mp4" type="video/mp4" />
       </video>
@@ -133,8 +135,10 @@ onMounted(async () => {
 
   // initial reveal
   setTimeout(() => {
-    revealText()
-  }, 100)
+    requestAnimationFrame(() => {
+      revealText()
+    })
+  }, 300)
 
   pageFlip.on('changeState', (e) => {
     if (e.data === 'user_fold' || e.data === 'flipping') {
