@@ -32,10 +32,10 @@
     <div class="app">
       <div ref="bookContainer" class="book-container" :class="{ hidden: !bookVisible }"></div>
       <button class="toggle-button" @click="toggleDisplay">
-        {{ currentMode === 'lumos' ? '🌙' : '🔅' }}
+        {{ currentMode === 'lumos' ? '🔅' : '🌙' }}
       </button>
       <button class="toggle-button mute" @click="toggleMute">
-        {{ isMuted ? '🔊' : '🔇' }}
+        {{ isMuted ? '🔇' : '🔊' }}
       </button>
     </div>
   </div>
