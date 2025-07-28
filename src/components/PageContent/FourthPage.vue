@@ -51,7 +51,7 @@ import '@/assets/book-theme.css'
 
 <style lang="css">
 .trello {
-  height: 250px;
+  height: 14rem;
   filter: grayscale(75%);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border: 1px solid #222;
