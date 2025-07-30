@@ -21,7 +21,6 @@ import '@/assets/book-theme.css'
       <figure class="image-container">
         <video
           src="/cover.mp4"
-          alt="cover photo"
           class="cover-photo"
           muted
           playsinline
@@ -36,7 +35,7 @@ import '@/assets/book-theme.css'
         Strange signs of activity have surfaced; peculiar inventions, cryptic sketches and a digital
         footprint across the web. Some believe he could be scheming his next big move. In response
         to the growing interest, our reporters have compiled everything known about the individual
-        in question. From early origins to current whereabouts, and theories about what may come
+        in question. From his early origins to current whereabouts and theories about what may come
         next. The truth, as always, lies between the lines.
       </p>
     </div>
@@ -51,7 +50,7 @@ import '@/assets/book-theme.css'
 }
 
 .cover-photo {
-  height: 450px;
+  height: 28rem;
   filter: grayscale(1) contrast(1.2);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border: 1px solid #222;

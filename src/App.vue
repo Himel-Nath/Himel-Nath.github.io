@@ -47,15 +47,15 @@ import { PageFlip } from 'page-flip'
 
 import BookCover from './components/BookCover.vue'
 import BookBack from './components/BookBack.vue'
-import IntroPage from './components/PageContent/IntroPage.vue'
-import SecondPage from './components/PageContent/SecondPage.vue'
-import ThirdPage from './components/PageContent/ThirdPage.vue'
-import FourthPage from './components/PageContent/FourthPage.vue'
-import FifthPage from './components/PageContent/FifthPage.vue'
-import SixthPage from './components/PageContent/SixthPage.vue'
-import SeventhPage from './components/PageContent/SeventhPage.vue'
-import EightPage from './components/PageContent/EightPage.vue'
-import FullTime from './components/PageContent/FullTime.vue'
+import BackgroundPage from './components/PageContent/BackgroundPage.vue'
+import EducationPage from './components/PageContent/EducationPage.vue'
+import DegreePage from './components/PageContent/DegreePage.vue'
+import FirstProjectsPage from './components/PageContent/FirstProjectsPage.vue'
+import SecondProjectsPage from './components/PageContent/SecondProjectsPage.vue'
+import InternshipPage from './components/PageContent/InternshipPage.vue'
+import RetailPage from './components/PageContent/RetailPage.vue'
+import FirstFulltimePage from './components/PageContent/FirstFulltimePage.vue'
+import SecondFulltimePage from './components/PageContent/SecondFulltimePage.vue'
 import HobbiesPage from './components/PageContent/HobbiesPage.vue'
 import ArtPage from './components/PageContent/ArtPage.vue'
 import InteractivePage from './components/PageContent/InteractivePage.vue'
@@ -69,15 +69,15 @@ const bookVisible = ref(true)
 const flipAudio = ref(null)
 const pages = [
   { component: BookCover },
-  { component: IntroPage },
-  { component: SecondPage },
-  { component: ThirdPage },
-  { component: FourthPage },
-  { component: FifthPage },
-  { component: SixthPage },
-  { component: SeventhPage },
-  { component: EightPage },
-  { component: FullTime },
+  { component: BackgroundPage },
+  { component: EducationPage },
+  { component: DegreePage },
+  { component: FirstProjectsPage },
+  { component: SecondProjectsPage },
+  { component: InternshipPage },
+  { component: RetailPage },
+  { component: FirstFulltimePage },
+  { component: SecondFulltimePage },
   { component: HobbiesPage },
   { component: ArtPage },
   { component: InteractivePage },
@@ -140,6 +140,7 @@ onMounted(async () => {
     })
   }, 300)
 
+  // add page flip sound
   pageFlip.on('changeState', (e) => {
     if (e.data === 'user_fold' || e.data === 'flipping') {
       const sound = flipAudio.value
@@ -153,13 +154,14 @@ onMounted(async () => {
     }
   })
 
-  // reveal on each flip
+  // reveal text effect on each flip
   pageFlip.on('flip', () => {
     requestAnimationFrame(() => {
       revealText()
     })
   })
 
+  // custom cursor
   const wandCursor = document.createElement('div')
   wandCursor.className = 'wand-cursor'
   wandCursor.innerHTML = `
@@ -167,7 +169,6 @@ onMounted(async () => {
     <div class='glow'></div>
   `
   document.body.appendChild(wandCursor)
-
   const glow = wandCursor.querySelector('.glow')
   glow.style.display = 'none'
 
@@ -175,6 +176,8 @@ onMounted(async () => {
     wandCursor.style.top = `${e.clientY}px`
     wandCursor.style.left = `${e.clientX}px`
   })
+
+  // glow effect on hover
   document.addEventListener('mouseover', (e) => {
     glow.style.display = e.target.closest('button, a, [role="button"], .clickable')
       ? 'block'
@@ -188,12 +191,12 @@ onMounted(async () => {
   document.addEventListener('keydown', handleKeydown)
 })
 
+// text effect on page flip
 function revealText() {
   const pages = [...document.querySelectorAll('.page')].filter((el) => el.offsetParent !== null)
 
   pages.forEach((currentPage) => {
     const elements = currentPage.querySelectorAll('.hidden-text')
-
     elements.forEach((element) => {
       element.classList.remove('reveal-text')
       void element.offsetWidth
@@ -203,11 +206,12 @@ function revealText() {
   })
 }
 
+// wobbly spell effect
 function showSpell(word) {
   const text = document.querySelector('.spell-text')
   text.innerHTML = ''
-
   const letters = word.split('')
+
   letters.forEach((char, index) => {
     const span = document.createElement('span')
     span.className = 'spell-char'
@@ -269,7 +273,7 @@ function handleKeydown(e) {
 }
 </script>
 
-<style>
+<style lang="css">
 .app {
   display: flex;
   justify-content: center;

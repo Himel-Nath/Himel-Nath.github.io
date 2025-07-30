@@ -32,26 +32,24 @@
 
 .link-overlay {
   position: absolute;
-  font-family: 'IM-Fell English', serif;
+  font-family: 'IM Fell English', serif;
   color: #333;
 }
-
-.resources {
-  top: 50%;
-  left: 15%;
-
-  ul {
-    list-style: none;
-
-    li {
-      font-size: 1.2rem;
-    }
-  }
-}
-
 .link-overlay a {
   display: block;
   margin-bottom: 0.3rem;
   text-decoration: none;
+}
+
+.resources {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+}
+.resources ul {
+  list-style: none;
+}
+.resources ul li {
+  font-size: 1.2rem;
 }
 </style>

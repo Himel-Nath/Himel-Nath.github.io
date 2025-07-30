@@ -5,7 +5,7 @@
       <span class="page-number">8</span>
       <h3 class="hidden-text sub-title">E-Joy Grocery Store (Dated April 2023 - July 2023)</h3>
       <p class="hidden-text page-text">
-        During a quieter chapter, he resurfaced behind an unexpected place, behind the counter of a
+        During a quieter chapter, he resurfaced in an unexpected place: behind the counter of a
         grocery store. He rang up groceries, cleaned aisles, dealt with difficult customers. But
         those watching closely saw more. He listened, observed, asked questions, engaged in
         conversation. Face after face, he slowly became someone who could talk to anyone. During the

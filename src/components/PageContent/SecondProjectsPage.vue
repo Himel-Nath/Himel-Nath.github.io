@@ -60,7 +60,7 @@ import '@/assets/book-theme.css'
   filter: grayscale(75%);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border: 1px solid #222;
-  margin: 0 1rem 0 1rem;
+  margin: 0 1rem;
 }
 
 .footage {

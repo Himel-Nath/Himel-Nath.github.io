@@ -7,15 +7,20 @@
         When he wasn't coding, he still kept busy. Those closest to him cited a strong interest in
         video games, sparked at the age of 4. The controller became a compass. It's no surprise he
         gravitated towards technology. Systems fascinated him. Another medium of escapism came
-        through reading. Horror, thrillers, fantasy, anything that allowed him to explore another
+        through reading. Horror, thrillers, fantasy, anything that allowed him to experience another
         reality. At night, his gaze turned upwards. Plans were made to obtain a telescope and
         explore the quiet vastness of the cosmos. Often, he put his imagination to paper. His
         earliest sketches date back to high school. Pastel, colored pencils, charcoal, acrylic, and
-        pen, he tried it all. He kept coming back to watercolors: deliberate, messy, demanding
+        pen, he tried it all. He kept coming back to watercolors - deliberate, messy, and demanding
         control. But he found beauty in the chaos. We've recovered some of his pieces, artifacts
-        that might offer a glimpse into a crowded mind.
+        that might offer a glimpse into a restless mind.
       </p>
-      <img src="/dancing.png" alt="dancing image" class="dancing-art" loading="lazy" />
+      <img
+        src="/dancing.png"
+        alt="painting of dancing figures"
+        class="dancing-art"
+        loading="lazy"
+      />
     </div>
   </div>
 </template>

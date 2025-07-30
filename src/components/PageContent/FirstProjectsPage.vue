@@ -15,7 +15,7 @@
         ></video>
         <figcaption class="caption">
           <a href="https://www.youtube.com/watch?v=2vdi5GXRdnQ" target="_blank"
-            >Final protoype shown in spring 2024.</a
+            >Final prototype shown in Spring 2024.</a
           >
         </figcaption>
       </figure>
@@ -27,8 +27,8 @@
           progress in real time.</strong
         >
         Later, outside the confines of academia, he returned to it. Alone. Written in
-        <strong>Java (Spring Boot)</strong> and <strong>React</strong>, he was able to strip out
-        bloat, modularize components, and introduce subtle but impactful improvements.
+        <strong>Java (Spring Boot)</strong> and <strong>React</strong>, he stripped out bloat,
+        modularized components, and introduced subtle but impactful improvements.
       </p>
       <br />
       <h3 class="hidden-text sub-title">Spotify Automation (Dated - Unknown)</h3>

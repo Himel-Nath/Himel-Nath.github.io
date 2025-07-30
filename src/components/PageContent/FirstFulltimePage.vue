@@ -4,9 +4,9 @@
       <h1 class="hidden-text title">The Industry</h1>
       <span class="page-number">9</span>
       <p class="hidden-text page-text">
-        Sources say SimplyCast was seeking for a brilliant mind still early in development. They
-        found him. Within weeks, he was already speaking the team's lingo, diagnosing bugs,
-        navigating the codebase and improving the platform. His supervisor reported that he
+        Sources say SimplyCast was seeking a brilliant mind still early in development. They found
+        him. Within weeks, he was already speaking the team's lingo, diagnosing bugs, navigating the
+        codebase and improving the platform. His supervisor reported that he
         <strong>completed 34 tasks, more than anyone else that term</strong>, often asking for
         additional work. We were able to scavenge these remarks from the Co-Op appraisal report:
       </p>
@@ -27,8 +27,8 @@
         He returned to SimplyCast after his graduation, but this time not as an intern. He picked up
         where he left off, fixing bugs, big and small. But the stakes had changed. He tackled
         customer-impacting and time-sensitive issues. Within weeks, critical issues became routine.
-        Two months in, <strong>he was promoted to a supervisor role.</strong> He overlooked two
-        teams - 4 students, across 8 months.
+        Two months in, <strong>he was promoted to a supervisor role.</strong> He oversaw two teams -
+        4 students, across 8 months.
         <strong
           >He ran daily scrums, delegated tasks, guided investigations, and reviewed
           submissions.</strong

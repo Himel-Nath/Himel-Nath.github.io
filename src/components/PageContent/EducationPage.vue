@@ -8,25 +8,24 @@
         <footer>- A close family member</footer>
       </blockquote>
       <p class="hidden-text page-text second-text">
-        Some might say he was gifted, but that couldn't be further from the truth. In high school,
-        he gravitated towards theory heavy subjects like
+        Some might say he was gifted, but the truth is far more ordinary. In high school, he
+        gravitated towards theory heavy subjects like
         <strong>Mathematics and the Sciences</strong>. If something interested him, he'd keep
-        chasing it. His final grades, certificate, and offers from top universities across UK and
-        Canada were sufficient evidence for that.
+        chasing it. His final grades, certificates, and offers from top universities across the UK
+        and Canada were sufficient evidence for that.
         <strong
           >And yet, he chose Computer Science, something he'd never studied, at Dalhousie
           University.</strong
         >
         To him, it wasn't the end goal. It was the tool. His main challenge in first year wasn't the
         learning curve. It was everything else; living alone, making valuable connections,
-        navigating a new environment, and surviving through the pandemic. As time progressed, he was
-        exposed to complex topics like
+        navigating a new environment, and surviving the pandemic. As time progressed, he was exposed
+        to complex topics like
         <strong
           >data structures and algorithms, operating systems, and even machine learning.</strong
         >
         <video
           src="/canva-ad.mp4"
-          alt="canva"
           class="canva-ad"
           muted
           playsinline
@@ -52,7 +51,7 @@ import '@/assets/book-theme.css'
 
 .canva-ad {
   float: right;
-  height: 350px;
+  height: 22rem;
   margin: 0.5rem;
 }
 </style>
