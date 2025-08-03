@@ -110,16 +110,6 @@ function toggleVisibility() {
   showSpell(spell)
 }
 
-const loadPages = () =>
-  new Promise((resolve) => {
-    const checkPage = () => {
-      const pages = document.querySelectorAll('.page')
-      if (pages.length > 0) resolve()
-      else requestAnimationFrame(checkPage)
-    }
-    checkPage()
-  })
-
 onMounted(async () => {
   await nextTick()
 
@@ -141,8 +131,8 @@ onMounted(async () => {
     flippingTime: 800,
   })
 
-  window.addEventListener('load', async () => {
-    await loadPages()
+  // prevent invisible book bug
+  window.addEventListener('load', () => {
     pageFlip.loadFromHTML(document.querySelectorAll('.page'))
   })
 
