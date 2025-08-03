@@ -300,7 +300,7 @@ function handleKeydown(e) {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
-  z-index: 2;
+  z-index: 10;
 }
 .book-container.hidden {
   transform: translateY(700px);
