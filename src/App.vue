@@ -131,8 +131,6 @@ onMounted(async () => {
     app.mount(wrapper)
   }
 
-  await loadPages()
-
   pageFlip = new PageFlip(bookContainer.value, {
     width: 575,
     height: 775,
@@ -143,7 +141,10 @@ onMounted(async () => {
     flippingTime: 800,
   })
 
-  pageFlip.loadFromHTML(document.querySelectorAll('.page'))
+  window.addEventListener('load', async () => {
+    await loadPages()
+    pageFlip.loadFromHTML(document.querySelectorAll('.page'))
+  })
 
   // initial reveal
   setTimeout(() => {
