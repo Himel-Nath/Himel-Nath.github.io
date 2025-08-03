@@ -110,6 +110,16 @@ function toggleVisibility() {
   showSpell(spell)
 }
 
+const loadPages = () =>
+  new Promise((resolve) => {
+    const checkPage = () => {
+      const pages = document.querySelectorAll('.page')
+      if (pages.length > 0) resolve()
+      else requestAnimationFrame(checkPage)
+    }
+    checkPage()
+  })
+
 onMounted(async () => {
   await nextTick()
 
@@ -120,6 +130,8 @@ onMounted(async () => {
     const app = createApp(component)
     app.mount(wrapper)
   }
+
+  await loadPages()
 
   pageFlip = new PageFlip(bookContainer.value, {
     width: 575,
@@ -300,7 +312,7 @@ function handleKeydown(e) {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
-  z-index: 10;
+  z-index: 2;
 }
 .book-container.hidden {
   transform: translateY(700px);
