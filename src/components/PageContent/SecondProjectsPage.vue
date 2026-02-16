@@ -34,7 +34,7 @@
         <strong>EC2</strong>.
       </p>
       <br />
-      <h3 class="hidden-text sub-title">The Daily Portfolio (May 2025 - )</h3>
+      <h3 class="hidden-text sub-title">The Daily Portfolio (May 2025 - August 2025)</h3>
       <p class="hidden-text page-text">
         Even after entering the workforce (see page 9), he didn't stop. Few have seen it in full.
         Those who have say it was built with <strong>Vue</strong> and handcrafted with care. A site
